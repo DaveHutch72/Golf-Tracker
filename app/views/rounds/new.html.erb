@@ -1,0 +1,8 @@
+<h1>New Round</h1>
+    <%= form_for(@round) do |f| %>
+      <%= f.label :score %>
+      <%= f.number_field :score %>
+      <br>
+      <br>
+      <%= f.submit %>
+    <% end %>
