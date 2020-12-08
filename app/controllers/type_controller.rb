@@ -4,17 +4,17 @@ class TypesController < ApplicationController
     end
 
     def create
-        @type = current_user.rounds.build(type_params)
+        @type = current_user.types.build(type_params)
         if @type.save
             redirect_to types_path
         else
-            render :new
+            redirect_to new_type_path
         end
     end
 
     private
 
     def type_params
-        params.require(:type).permit(:score)
+        params.require(:type).permit(:style)
     end
 end

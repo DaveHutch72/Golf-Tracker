@@ -3,5 +3,14 @@
       <%= f.text_field :name %>
       <br>
       <br>
+      <%= f.label :type %>
+          <%= f.collection_select(:type_id, Type.all, :id, :name, prompt: "Pick a type or add your own below") %><br>
+    <br>
+        <%= f.fields_for :type, Type.new do |t| %><br>
+            <%= t.label "Create My Own type"%><br>
+            <br>
+            <%= t.text_field :style %>
+        <% end%>
+      <br>
       <%= f.submit %>
     <% end %>
