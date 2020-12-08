@@ -1,4 +1,4 @@
-<h1>All courses played</h1>
+<h1>All courses</h1>
 
 
 <% @courses.each do |c| %>
@@ -6,3 +6,5 @@
         <br>
         <br>
 <% end%>
+
+<button><%= link_to 'Add a new course', new_course_path %></button><br><br>
