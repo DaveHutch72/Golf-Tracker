@@ -18,14 +18,10 @@ ActiveRecord::Schema.define(version: 2020_12_04_154930) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "rounds", force: :cascade do |t|
-    t.integer "score"
-    t.integer "user_id", null: false
-    t.integer "courses_id", null: false
+  create_table "types", force: :cascade do |t|
+    t.string "style"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["courses_id"], name: "index_rounds_on_courses_id"
-    t.index ["user_id"], name: "index_rounds_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,6 +38,4 @@ ActiveRecord::Schema.define(version: 2020_12_04_154930) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "rounds", "courses", column: "courses_id"
-  add_foreign_key "rounds", "users"
 end

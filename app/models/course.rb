@@ -1,4 +1,4 @@
 class Course < ApplicationRecord
-    has_many :rounds
-    has_many :users, through: :rounds
+    belongs_to :type
+    belongs_to :users
 end

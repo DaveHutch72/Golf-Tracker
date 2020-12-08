@@ -1,1 +1,13 @@
-<h1>Golf Tracker Application</h1>
+<% if user_signed_in? %>
+    <div>
+        <h1>Hi, <%= current_user.email %>, Welcome to Your Golf Score Tracker!</h1>
+    </div>
+
+    <div>
+        <p>Use the links at the top of the page to navigate the site.</p>
+    </div>
+<% else %>
+  <div>
+    <h1>Golf Tracker Application</h1>
+  </div>
+<% end %>

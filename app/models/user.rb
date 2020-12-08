@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable
   
   
-  has_many :rounds
-  has_many :courses, through: :rounds
+  has_many :courses
+  has_many :types, through: :courses
          def self.from_omniauth(authorize)
           where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
             user.provider = auth.provider
