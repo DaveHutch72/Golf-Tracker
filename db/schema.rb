@@ -14,6 +14,8 @@ ActiveRecord::Schema.define(version: 2020_12_04_154930) do
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
+    t.integer "user_id"
+    t.integer "type_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
