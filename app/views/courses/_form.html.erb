@@ -2,14 +2,14 @@
       <%= f.label :name %>
       <%= f.text_field :name %>
       <br>
-      <%= f.label :played, "Have you played it yet?" %>
+      <%= f.label :played, "Have you played this course?" %>
       <br>
       <%= f.check_box :played %><br>
       <br>
       <%= f.label :category %><br>
       <br>
       <%= f.label :type %>
-          <%= f.collection_select(:type_id, Type.all, :id, :style, prompt: "Pick a type or add your own below") %><br>
+          <%= f.collection_select(:type_id, Type.all, :id, :style, prompt: "Pick a course type or add your own below") %><br>
     <br>
         <%= f.fields_for :type, Type.new do |t| %><br>
             <%= t.label "Create My Own type"%><br>

@@ -1,4 +1,9 @@
 class TypesController < ApplicationController
+    def index
+        binding.pry
+        @types = current_user.types
+    end
+    
     def new
         @type = Type.new
     end

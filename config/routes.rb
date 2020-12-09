@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
  
-  resources :courses do
-    resources :types, only: [:new, :create, :index]
+  resources :courses
+  resources :types, only: [:index, :show] do
+    resources :courses, only: [:index, :show, :new]
   end
-  resources :types
   devise_for :users, :controllers => {registrations: 'registrations', omniauth_callbacks: 'callbacks'}
   root to: 'application#welcome'
 
