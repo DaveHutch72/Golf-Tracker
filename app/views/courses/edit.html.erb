@@ -1,4 +1,9 @@
 <h1>Edit Course</h1>
+    <% if @course.errors.any? %>
+        <% @course.errors.full_messages.each do |error_message| %>
+        <span class="error-text", style="color:red"><strong><%= error_message %> !!! </strong></span><br>
+        <% end %>
+    <% end %>
 <%= render 'form' %>
 <br>
 <%= link_to 'Show', @course %> |
