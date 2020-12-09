@@ -27,6 +27,10 @@ class CoursesController < ApplicationController
         redirect_to courses_path
     end
 
+    def played
+        @courses = current_user.courses.played
+    end
+
     private
 
     def set_course

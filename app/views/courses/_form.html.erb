@@ -2,6 +2,11 @@
       <%= f.label :name %>
       <%= f.text_field :name %>
       <br>
+      <%= f.label :played, "Have you played it yet?" %>
+      <br>
+      <%= f.check_box :played %><br>
+      <br>
+      <%= f.label :category %><br>
       <br>
       <%= f.label :type %>
           <%= f.collection_select(:type_id, Type.all, :id, :style, prompt: "Pick a type or add your own below") %><br>
