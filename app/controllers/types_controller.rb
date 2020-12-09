@@ -1,6 +1,5 @@
 class TypesController < ApplicationController
     def index
-        binding.pry
         @types = current_user.types
     end
     
