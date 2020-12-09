@@ -16,6 +16,14 @@ class TypesController < ApplicationController
         end
     end
 
+    def show
+        @type = current_user.categories.find_by(id: params[:id])
+            if @type
+                @courses = current_user.courses.where(type_id: params[:id])
+                render :show 
+            end
+    end
+
     private
 
     def type_params
