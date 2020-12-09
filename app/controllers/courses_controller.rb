@@ -18,7 +18,15 @@ class CoursesController < ApplicationController
         if @course.save
             redirect_to course_path(@course)
         else
-            redirect_to root_path
+            render :new
+        end
+    end
+
+    def update
+        if @course.update(course_params)
+            redirect_to course_path(@course)
+        else
+            render :edit
         end
     end
 
