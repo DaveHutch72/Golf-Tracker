@@ -1,0 +1,4 @@
+<h1>Here are the golf courses for this type</h1>
+<% @courses.each do |c|%>
+    <%= link_to c.name, course_path(c) %>
+<% end%>
