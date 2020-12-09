@@ -1,0 +1,8 @@
+<h1>Played Courses</h1>
+
+<% @courses.each do |c| %>
+        <%= link_to c.name, c  %>
+        <br>
+        <%= c.played %>
+        <br>
+<% end%>
