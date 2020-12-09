@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- 
+  get 'courses/played', to: 'courses#played'
   resources :courses
   resources :types, only: [:index, :show] do
     resources :courses, only: [:index, :show, :new]
