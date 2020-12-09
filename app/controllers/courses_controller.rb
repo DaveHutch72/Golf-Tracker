@@ -14,6 +14,7 @@ class CoursesController < ApplicationController
     end
     
     def create
+        binding.pry
         @course = current_user.courses.build(course_params)
         if @course.save
             redirect_to course_path(@course)
@@ -49,6 +50,6 @@ class CoursesController < ApplicationController
     end
 
     def course_params
-        params.require(:course).permit(:name, :user_id, :type_id, type_attributes: [ :style ])
+        params.require(:course).permit(:name, :user_id, :played, :type_id, type_attributes: [ :style ])
     end
 end
